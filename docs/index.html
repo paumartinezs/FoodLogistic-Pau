@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodLogistic-Pau | Logística Alimentària d'Avantguarda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #84cc16; /* Lime 500 */
+            --bg-dark: #0a0a0a;
+            --bg-card: #171717;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e5e5e5;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #84cc16, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estil personalitzat per a la barra de desplaçament */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #404040;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Nav -->
+    <header class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-lime-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-truck-fast text-black text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tighter">FoodLogistic-<span class="text-lime-500">Pau</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#inici" class="nav-link">Inici</a>
+                    <a href="#serveis" class="nav-link">Serveis</a>
+                    <a href="#sobre-nosaltres" class="nav-link">Sobre nosaltres</a>
+                    <a href="#contacte" class="nav-link">Contacte</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-b border-white/10 px-4 py-6 space-y-4">
+            <a href="#inici" class="block nav-link text-lg">Inici</a>
+            <a href="#serveis" class="block nav-link text-lg">Serveis</a>
+            <a href="#sobre-nosaltres" class="block nav-link text-lg">Sobre nosaltres</a>
+            <a href="#contacte" class="block nav-link text-lg">Contacte</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inici" class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000" 
+                     alt="Magatzem logístic" 
+                     class="w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black"></div>
+            </div>
+
+            <div class="relative z-10 text-center px-4 max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                    Optimitzant la <span class="gradient-text">Cadena de Fred</span> Global
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                    Solucions logístiques intel·ligents per al sector alimentari. Tecnologia, rapidesa i seguretat en cada enviament.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#serveis" class="bg-lime-500 hover:bg-lime-600 text-black font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105">
+                        Explorar Serveis
+                    </a>
+                    <a href="#contacte" class="border border-white/20 hover:bg-white/10 text-white font-bold py-4 px-8 rounded-full transition-all">
+                        Sol·licitar Pressupost
+                    </a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+                <i class="fas fa-chevron-down text-lime-500 text-2xl"></i>
+            </div>
+        </section>
+
+        <!-- Serveis Section -->
+        <section id="serveis" class="py-24 bg-neutral-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 section-fade">
+                    <h2 class="text-lime-500 font-semibold tracking-widest uppercase mb-2">Què fem</h2>
+                    <p class="text-4xl font-bold">Els Nostres Serveis</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Servei 1 -->
+                    <div class="bg-neutral-800 p-8 rounded-2xl border border-white/5 hover:border-lime-500/50 transition-all group section-fade">
+                        <div class="w-14 h-14 bg-lime-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-lime-500 transition-colors">
+                            <i class="fas fa-snowflake text-lime-500 text-2xl group-hover:text-black"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Transport Refrigerat</h3>
+                        <p class="text-gray-400">Control de temperatura en temps real per garantir que els teus productes arribin frescos.</p>
+                    </div>
+
+                    <!-- Servei 2 -->
+                    <div class="bg-neutral-800 p-8 rounded-2xl border border-white/5 hover:border-lime-500/50 transition-all group section-fade">
+                        <div class="w-14 h-14 bg-lime-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-lime-500 transition-colors">
+                            <i class="fas fa-warehouse text-lime-500 text-2xl group-hover:text-black"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Emmagatzematge Intel·ligent</h3>
+                        <p class="text-gray-400">Sistemes de gestió d'estoc avançats amb traçabilitat completa de cada lot.</p>
+                    </div>
+
+                    <!-- Servei 3 -->
+                    <div class="bg-neutral-800 p-8 rounded-2xl border border-white/5 hover:border-lime-500/50 transition-all group section-fade">
+                        <div class="w-14 h-14 bg-lime-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-lime-500 transition-colors">
+                            <i class="fas fa-route text-lime-500 text-2xl group-hover:text-black"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Distribució Última Milla</h3>
+                        <p class="text-gray-400">Optimització de rutes per a lliuraments ràpids en entorns urbans densos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Nosaltres Section -->
+        <section id="sobre-nosaltres" class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 section-fade">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1000" 
+                                 alt="Equip FoodLogistic-Pau" 
+                                 class="rounded-3xl shadow-2xl relative z-10">
+                            <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-lime-500 rounded-3xl z-0"></div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 section-fade">
+                        <h2 class="text-lime-500 font-semibold tracking-widest uppercase mb-2">Sobre nosaltres</h2>
+                        <h3 class="text-4xl font-bold mb-6">Més de 20 anys connectant la producció amb la taula</h3>
+                        <p class="text-gray-400 text-lg mb-6">
+                            A FoodLogistic-Pau, entenem que darrere de cada enviament hi ha una responsabilitat amb la salut i el benestar del consumidor. Hem construït una xarxa logística basada en la confiança i la innovació tecnològica.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3 text-gray-200">
+                                <i class="fas fa-check-circle text-lime-500"></i>
+                                <span>Certificacions de seguretat alimentària internacionals.</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-gray-200">
+                                <i class="fas fa-check-circle text-lime-500"></i>
+                                <span>Flota 100% eco-eficient.</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-gray-200">
+                                <i class="fas fa-check-circle text-lime-500"></i>
+                                <span>Atenció personalitzada 24/7.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacte Section -->
+        <section id="contacte" class="py-24 bg-neutral-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="section-fade">
+                        <h2 class="text-4xl font-bold mb-8">Parlem del teu <span class="text-lime-500">proper projecte</span></h2>
+                        <p class="text-gray-400 mb-10">
+                            Tens alguna pregunta sobre les nostres tarifes o vols un pressupost a mida? Omple el formulari i el nostre equip es posarà en contacte amb tu en menys de 24 hores.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-neutral-800 flex items-center justify-center rounded-full text-lime-500">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <span>+34 900 123 456</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-neutral-800 flex items-center justify-center rounded-full text-lime-500">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span>alu.pau.martinez@mataro.epiaedu.cat</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-neutral-800 flex items-center justify-center rounded-full text-lime-500">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <span>Carrer de Sant Agustí, 59, 08301 Mataró, Barcelona</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-800 p-8 rounded-3xl border border-white/5 section-fade">
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Nom Complet</label>
+                                <input type="text" required class="w-full bg-neutral-900 border border-white/10 rounded-xl px-4 py-3 focus:border-lime-500 focus:ring-1 focus:ring-lime-500 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email corporatiu</label>
+                                <input type="email" required class="w-full bg-neutral-900 border border-white/10 rounded-xl px-4 py-3 focus:border-lime-500 focus:ring-1 focus:ring-lime-500 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Missatge</label>
+                                <textarea rows="4" required class="w-full bg-neutral-900 border border-white/10 rounded-xl px-4 py-3 focus:border-lime-500 focus:ring-1 focus:ring-lime-500 outline-none transition-all"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-lime-500 hover:bg-lime-600 text-black font-bold py-4 rounded-xl transition-all">
+                                Enviar Missatge
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2024 FoodLogistic-Pau. Tots els drets reservats.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-lime-500"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="hover:text-lime-500"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-lime-500"><i class="fab fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notificació d'enviament (UI Custom) -->
+    <div id="toast" class="fixed bottom-10 right-10 bg-lime-500 text-black px-6 py-4 rounded-2xl font-bold transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-[100]">
+        Missatge enviat amb èxit!
+    </div>
+
+    <script>
+        // Logística de JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Menú Mòbil
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Tancar menú en fer clic a un enllaç (mòbil)
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 2. Animacions d'aparició (Scroll Reveal)
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.section-fade').forEach(section => {
+                observer.observe(section);
+            });
+
+            // 3. Gestió del Formulari
+            const contactForm = document.getElementById('contactForm');
+            const toast = document.getElementById('toast');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Animació de feedback
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                    contactForm.reset();
+                }, 3000);
+            });
+
+            // 4. Canvi d'estil del header al fer scroll
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-black/95', 'shadow-2xl');
+                } else {
+                    header.classList.remove('bg-black/95', 'shadow-2xl');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
