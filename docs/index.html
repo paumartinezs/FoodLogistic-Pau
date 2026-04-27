@@ -519,12 +519,24 @@
                                 <input type="email" required placeholder="joan@empresa.cat" class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
                             </div>
                             <div>
+                                <label class="block text-sm font-semibold mb-3 text-white">Telèfon</label>
+                                <input type="tel" required placeholder="+34 600 000 000" class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
+                            </div>
+                            <div>
                                 <label class="block text-sm font-semibold mb-3 text-white">Empresa</label>
                                 <input type="text" required placeholder="La teva empresa" class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold mb-3 text-white">Missatge</label>
                                 <textarea rows="4" required placeholder="Descriu el teu projecte..." class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500 resize-none"></textarea>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <input type="checkbox" required id="data-consent" class="mt-1">
+                                <label for="data-consent" class="text-sm text-gray-300">He llegit i accepto la <a href="politica-privacitat.html" class="text-lime-500 hover:underline">Política de Privacitat</a> i el tractament de les meves dades personals.</label>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <input type="checkbox" id="commercial-consent" class="mt-1">
+                                <label for="commercial-consent" class="text-sm text-gray-300">Accepto rebre comunicacions comercials segons l'<a href="avis-legal.html" class="text-lime-500 hover:underline">Avís Legal</a>.</label>
                             </div>
                             <button type="submit" class="w-full btn-primary text-black font-bold py-4 rounded-2xl transition-all transform hover:scale-105 relative z-10">
                                 <span class="relative z-10">Enviar Solicitud</span>
@@ -594,9 +606,9 @@
                     <p>&copy; 2024 FoodLogistic-Pau. Tots els drets reservats.</p>
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-lime-500 transition-colors">Política de Privacitat</a>
-                    <a href="#" class="hover:text-lime-500 transition-colors">Avís Legal</a>
-                    <a href="#" class="hover:text-lime-500 transition-colors">Cookies</a>
+                    <a href="politica-privacitat.html" class="hover:text-lime-500 transition-colors">Política de Privacitat</a>
+                    <a href="avis-legal.html" class="hover:text-lime-500 transition-colors">Avís Legal</a>
+                    <a href="politica-cookies.html" class="hover:text-lime-500 transition-colors">Cookies</a>
                 </div>
             </div>
         </div>
@@ -605,6 +617,17 @@
     <!-- Notificació d'enviament (UI Custom) -->
     <div id="toast" class="fixed bottom-10 right-10 bg-lime-500 text-black px-6 py-4 rounded-2xl font-bold transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-[100]">
         Missatge enviat amb èxit!
+    </div>
+
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl p-4 border-t border-white/10 z-50">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="text-gray-300 text-sm mb-4 md:mb-0">Aquest lloc web utilitza cookies per millorar la teva experiència. Consulta la nostra <a href="politica-cookies.html" class="text-lime-500 hover:underline">Política de Cookies</a>.</p>
+            <div class="flex space-x-4">
+                <button id="accept-cookies" class="bg-lime-500 text-black px-4 py-2 rounded-full font-bold hover:bg-lime-400 transition-colors">Acceptar</button>
+                <button id="reject-cookies" class="border border-gray-500 text-gray-300 px-4 py-2 rounded-full hover:bg-gray-700 transition-colors">Rebutjar</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -655,6 +678,11 @@
 
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
+                
+                if (!document.getElementById('data-consent').checked) {
+                    alert('Has d\'acceptar la política de privacitat per continuar.');
+                    return;
+                }
                 
                 // Animació de feedback mejorada
                 toast.classList.remove('translate-y-20', 'opacity-0');
@@ -769,6 +797,18 @@
                 input.addEventListener('blur', function() {
                     this.parentElement.classList.remove('ring-2', 'ring-lime-500/50');
                 });
+            });
+
+            // Cookie Banner
+            if (localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-banner').classList.add('hidden');
+            }
+            document.getElementById('accept-cookies').addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                document.getElementById('cookie-banner').classList.add('hidden');
+            });
+            document.getElementById('reject-cookies').addEventListener('click', () => {
+                document.getElementById('cookie-banner').classList.add('hidden');
             });
         });
     </script>
