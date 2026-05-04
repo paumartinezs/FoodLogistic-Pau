@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="ca" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodLogistic | Logística Alimentària d'Avantguarda</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --primary: #84cc16; /* Lime 500 */
+            --primary: #84cc16;
+            /* Lime 500 */
             --bg-dark: #050505;
             --bg-card: #111111;
             --accent-blue: #0ea5e9;
@@ -58,10 +61,23 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -30px) scale(1.05); }
-            50% { transform: translate(0, -60px) scale(1.1); }
-            75% { transform: translate(-30px, -30px) scale(1.05); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(30px, -30px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(0, -60px) scale(1.1);
+            }
+
+            75% {
+                transform: translate(-30px, -30px) scale(1.05);
+            }
         }
 
         .gradient-text {
@@ -74,6 +90,17 @@
         .gradient-glow {
             background: linear-gradient(135deg, rgba(132, 204, 22, 0.2) 0%, rgba(14, 165, 233, 0.2) 100%);
             border: 1px solid rgba(132, 204, 22, 0.3);
+        }
+
+        .gradient-animated {
+            background-size: 200% auto;
+            animation: shine 8s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
         }
 
         .nav-link {
@@ -125,7 +152,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -136,7 +163,8 @@
         .card-hover:hover {
             transform: translateY(-10px);
             border-color: var(--primary) !important;
-            box-shadow: 0 20px 50px rgba(132, 204, 22, 0.2);
+            box-shadow: 0 15px 40px rgba(132, 204, 22, 0.5);
+            z-index: 10;
         }
 
         .btn-primary {
@@ -173,13 +201,16 @@
         ::-webkit-scrollbar {
             width: 10px;
         }
+
         ::-webkit-scrollbar-track {
             background: #111111;
         }
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--primary), var(--accent-blue));
             border-radius: 5px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(180deg, var(--accent-green), var(--primary));
         }
@@ -197,8 +228,15 @@
         }
 
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(132, 204, 22, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(132, 204, 22, 0.6); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(132, 204, 22, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(132, 204, 22, 0.6);
+            }
         }
 
         .stars {
@@ -207,22 +245,31 @@
         }
     </style>
 </head>
+
 <body class="antialiased">
 
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+    <div
+        class="absolute top-0 w-full z-[60] bg-lime-500 text-black font-bold text-center h-10 flex items-center justify-center text-sm sm:text-base px-4">
+        <span>🚀 Nou servei d'Última Milla Sostenible - <a href="#contacte"
+                class="underline hover:text-white transition-colors">Consulta tarifes</a></span>
+    </div>
 
-    <header class="fixed w-full z-50 bg-black/60 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
+    <div class="orb orb-1 parallax-element" data-speed="40"></div>
+    <div class="orb orb-2 parallax-element" data-speed="-30"></div>
+
+    <header id="main-header"
+        class="fixed top-10 w-full z-50 bg-neutral-900/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-lime-500 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-truck-fast text-black text-xl"></i>
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 bg-lime-500 rounded-xl flex items-center justify-center shadow-lg shadow-lime-500/20">
+                        <i class="fas fa-truck-fast text-black text-2xl"></i>
                     </div>
-                    <span class="text-2xl font-bold tracking-tighter">FoodLogistic</span>
+                    <span class="text-3xl font-extrabold tracking-tighter text-white">FoodLogistic</span>
                 </div>
 
-                <nav class="hidden md:flex space-x-8 font-medium text-sm">
+                <nav class="hidden md:flex space-x-10 font-bold text-lg text-white">
                     <a href="#inici" class="nav-link">Inici</a>
                     <a href="#serveis" class="nav-link">Serveis</a>
                     <a href="#estadistiques" class="nav-link">Estadístiques</a>
@@ -231,19 +278,20 @@
                 </nav>
 
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                    <button id="mobile-menu-btn" class="text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-3xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10 px-4 py-6 space-y-4">
-            <a href="#inici" class="block nav-link text-lg">Inici</a>
-            <a href="#serveis" class="block nav-link text-lg">Serveis</a>
-            <a href="#estadistiques" class="block nav-link text-lg">Estadístiques</a>
-            <a href="#testimonials" class="block nav-link text-lg">Testimonials</a>
-            <a href="#contacte" class="block nav-link text-lg">Contacte</a>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-neutral-900/95 backdrop-blur-xl border-b border-white/10 px-4 py-6 space-y-4">
+            <a href="#inici" class="block nav-link text-xl font-bold text-white">Inici</a>
+            <a href="#serveis" class="block nav-link text-xl font-bold text-white">Serveis</a>
+            <a href="#estadistiques" class="block nav-link text-xl font-bold text-white">Estadístiques</a>
+            <a href="#testimonials" class="block nav-link text-xl font-bold text-white">Testimonials</a>
+            <a href="#contacte" class="block nav-link text-xl font-bold text-white">Contacte</a>
         </div>
     </header>
 
@@ -251,9 +299,8 @@
 
         <section id="inici" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000" 
-                     alt="Magatzem logístic" 
-                     class="w-full h-full object-cover opacity-25">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000"
+                    alt="Magatzem logístic" class="w-full h-full object-cover opacity-25">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black/90"></div>
             </div>
 
@@ -263,17 +310,21 @@
                         🚀 Innovació en Logística Alimentària
                     </span>
                 </div>
-                <h1 class="text-6xl md:text-8xl font-extrabold mb-8 leading-tight">
-                    Optimitzant la <span class="gradient-text">Cadena de Fred</span> Global
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
+                    Logística Alimentària i <br class="hidden md:block" /><span
+                        class="gradient-text gradient-animated">Transport Refrigerat a Mataró</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-                    Solucions logístiques intel·ligents per al sector alimentari. Tecnologia de punta, rapidesa sense compromisos i seguretat en cada enviament.
+                    Solucions logístiques intel·ligents per al sector alimentari. Tecnologia de punta, rapidesa sense
+                    compromisos i seguretat en cada enviament.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="#serveis" class="btn-primary text-black font-bold py-4 px-8 rounded-full transition-all transform hover:scale-110 relative z-10">
+                    <a href="#serveis"
+                        class="btn-primary text-black font-bold py-4 px-8 rounded-full transition-all transform hover:scale-110 relative z-10">
                         <span class="relative z-10">Explorar Serveis</span>
                     </a>
-                    <a href="#contacte" class="border-2 border-lime-500 hover:bg-lime-500/10 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:border-lime-400">
+                    <a href="#contacte"
+                        class="border-2 border-lime-500 hover:bg-lime-500/10 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:border-lime-400">
                         Sol·licitar Pressupost
                     </a>
                 </div>
@@ -284,22 +335,28 @@
             </div>
         </section>
 
-        <section id="serveis" class="py-32 bg-gradient-to-b from-black to-black/50 relative overflow-hidden">
+        <section id="serveis"
+            class="py-40 border-t border-white/5 bg-gradient-to-b from-black to-black/50 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20 section-fade">
-                    <h2 class="text-lime-500 font-bold tracking-widest uppercase mb-4 text-sm">Els Nostres Serveis Premium</h2>
-                    <p class="text-5xl md:text-6xl font-extrabold mb-6">Solucions Completes</p>
-                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">Cobreix totes les fases de la teva cadena de subministrament amb tecnologia de punta</p>
+                <div class="text-center mb-24 section-fade">
+                    <h2 class="text-lime-500 font-bold tracking-widest uppercase mb-4 text-base">Els Nostres Serveis
+                        Premium</h2>
+                    <p class="text-6xl md:text-7xl font-extrabold mb-6">Solucions Completes</p>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">Cobreix totes les fases de la teva cadena de
+                        subministrament amb tecnologia de punta</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
 
-                    <div class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-8 rounded-3xl border border-white/10 hover:border-lime-500/50 transition-all group section-fade card-hover">
-                        <div class="w-16 h-16 bg-gradient-to-br from-lime-500/20 to-green-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:from-lime-500/40 transition-all">
+                    <div
+                        class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-8 rounded-3xl border border-white/10 hover:border-lime-500/50 transition-all group section-fade card-hover">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-lime-500/20 to-green-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:from-lime-500/40 transition-all">
                             <i class="fas fa-snowflake text-lime-400 text-3xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Transport Refrigerat</h3>
-                        <p class="text-gray-400 mb-6 leading-relaxed">Control de temperatura en temps real amb tecnologia IoT per garantir que els teus productes arribin impecables.</p>
+                        <h3 class="text-3xl font-bold mb-4">Transport Refrigerat</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Control de temperatura en temps real amb
+                            tecnologia IoT per garantir que els teus productes arribin impecables.</p>
                         <ul class="space-y-2 text-sm text-gray-300">
                             <li><i class="fas fa-check-circle text-lime-500 mr-2"></i>GPS en viu</li>
                             <li><i class="fas fa-check-circle text-lime-500 mr-2"></i>Monitoratge 24/7</li>
@@ -307,12 +364,15 @@
                         </ul>
                     </div>
 
-                    <div class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-8 rounded-3xl border border-white/10 hover:border-lime-500/50 transition-all group section-fade card-hover">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:from-blue-500/40 transition-all">
+                    <div
+                        class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-8 rounded-3xl border border-white/10 hover:border-lime-500/50 transition-all group section-fade card-hover">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:from-blue-500/40 transition-all">
                             <i class="fas fa-warehouse text-blue-400 text-3xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Emmagatzematge Intel·ligent</h3>
-                        <p class="text-gray-400 mb-6 leading-relaxed">Sistemes de gestió d'estoc avançats amb IA per a traçabilitat completa i optimització de recursos.</p>
+                        <h3 class="text-3xl font-bold mb-4">Emmagatzematge Intel·ligent</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Sistemes de gestió d'estoc avançats amb IA per a
+                            traçabilitat completa i optimització de recursos.</p>
                         <ul class="space-y-2 text-sm text-gray-300">
                             <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>IA i Machine Learning</li>
                             <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Automatització completa</li>
@@ -320,12 +380,15 @@
                         </ul>
                     </div>
 
-                    <div class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-8 rounded-3xl border border-white/10 hover:border-lime-500/50 transition-all group section-fade card-hover">
-                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:from-purple-500/40 transition-all">
+                    <div
+                        class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-8 rounded-3xl border border-white/10 hover:border-lime-500/50 transition-all group section-fade card-hover">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:from-purple-500/40 transition-all">
                             <i class="fas fa-route text-purple-400 text-3xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Distribució Última Milla</h3>
-                        <p class="text-gray-400 mb-6 leading-relaxed">Optimització de rutes amb algoritmes avançats per lliuraments ràpids i sostenibles en entorns urbans.</p>
+                        <h3 class="text-3xl font-bold mb-4">Distribució Última Milla</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Optimització de rutes amb algoritmes avançats per
+                            lliuraments ràpids i sostenibles en entorns urbans.</p>
                         <ul class="space-y-2 text-sm text-gray-300">
                             <li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Rutes inteligents</li>
                             <li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Carbon neutral</li>
@@ -336,15 +399,16 @@
             </div>
         </section>
 
-        <section id="estadistiques" class="py-32 relative overflow-hidden">
+        <section id="estadistiques" class="py-40 border-t border-white/5 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-16">
                     <div class="lg:w-1/2 section-fade">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1000" 
-                                 alt="Equip FoodLogistic" 
-                                 class="rounded-3xl shadow-2xl relative z-10 w-full">
-                            <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-lime-500 rounded-3xl z-0 opacity-50"></div>
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1000"
+                                alt="Equip FoodLogistic" class="rounded-3xl shadow-2xl relative z-10 w-full">
+                            <div
+                                class="absolute -bottom-6 -right-6 w-full h-full border-2 border-lime-500 rounded-3xl z-0 opacity-50">
+                            </div>
                         </div>
                     </div>
                     <div class="lg:w-1/2 section-fade">
@@ -353,25 +417,31 @@
                                 Sobre Nosaltres
                             </span>
                         </div>
-                        <h2 class="text-5xl font-bold mb-6 leading-tight">Més de 20 anys <span class="gradient-text">connectant el sector</span></h2>
+                        <h2 class="text-6xl md:text-7xl font-bold mb-6 leading-tight">Més de 20 anys <span
+                                class="gradient-text">connectant el sector</span></h2>
                         <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                            A FoodLogistic, entenem que darrere de cada enviament hi ha una responsabilitat amb la salut i el benestar del consumidor. Hem construït una xarxa logística basada en la confiança i la innovació tecnològica.
+                            A FoodLogistic, entenem que darrere de cada enviament hi ha una responsabilitat amb la salut
+                            i el benestar del consumidor. Hem construït una xarxa logística basada en la confiança i la
+                            innovació tecnològica.
                         </p>
                         <ul class="space-y-4 mb-10">
                             <li class="flex items-center space-x-3 text-gray-200">
-                                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-lime-500/20 text-lime-500">
+                                <span
+                                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-lime-500/20 text-lime-500">
                                     <i class="fas fa-shield-alt text-sm"></i>
                                 </span>
                                 <span>Certificacions de seguretat alimentària internacionals (HACCP, BRC)</span>
                             </li>
                             <li class="flex items-center space-x-3 text-gray-200">
-                                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-500/20 text-green-500">
+                                <span
+                                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-500/20 text-green-500">
                                     <i class="fas fa-leaf text-sm"></i>
                                 </span>
                                 <span>Flota 100% eco-eficient amb energia renovable</span>
                             </li>
                             <li class="flex items-center space-x-3 text-gray-200">
-                                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/20 text-blue-500">
+                                <span
+                                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/20 text-blue-500">
                                     <i class="fas fa-headset text-sm"></i>
                                 </span>
                                 <span>Atenció personalitzada 24/7 en múltiples idiomes</span>
@@ -381,19 +451,23 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-20">
-                    <div class="bg-gradient-to-br from-lime-500/10 to-green-500/5 rounded-2xl p-8 border border-lime-500/20 section-fade text-center">
+                    <div
+                        class="bg-gradient-to-br from-lime-500/10 to-green-500/5 rounded-2xl p-8 border border-lime-500/20 section-fade text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(132,204,22,0.4)] hover:border-lime-400/60 cursor-default hover:bg-lime-500/10">
                         <div class="stat-number">500+</div>
                         <p class="text-gray-300 font-medium mt-2">Clients Actius</p>
                     </div>
-                    <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-2xl p-8 border border-blue-500/20 section-fade text-center">
+                    <div
+                        class="bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-2xl p-8 border border-blue-500/20 section-fade text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] hover:border-blue-400/60 cursor-default hover:bg-blue-500/10">
                         <div class="stat-number">2.5M</div>
                         <p class="text-gray-300 font-medium mt-2">Enviaments Anuals</p>
                     </div>
-                    <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/5 rounded-2xl p-8 border border-purple-500/20 section-fade text-center">
+                    <div
+                        class="bg-gradient-to-br from-purple-500/10 to-pink-500/5 rounded-2xl p-8 border border-purple-500/20 section-fade text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] hover:border-purple-400/60 cursor-default hover:bg-purple-500/10">
                         <div class="stat-number">99.8%</div>
                         <p class="text-gray-300 font-medium mt-2">Taxa de Puntualitat</p>
                     </div>
-                    <div class="bg-gradient-to-br from-orange-500/10 to-red-500/5 rounded-2xl p-8 border border-orange-500/20 section-fade text-center">
+                    <div
+                        class="bg-gradient-to-br from-orange-500/10 to-red-500/5 rounded-2xl p-8 border border-orange-500/20 section-fade text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] hover:border-orange-400/60 cursor-default hover:bg-orange-500/10">
                         <div class="stat-number">20+</div>
                         <p class="text-gray-300 font-medium mt-2">Anys en el Sector</p>
                     </div>
@@ -401,56 +475,156 @@
             </div>
         </section>
 
-        <section id="testimonials" class="py-32 bg-gradient-to-b from-black/50 to-black relative overflow-hidden">
+        <section class="py-20 bg-black border-t border-white/5 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-fade">
+                <p class="text-center text-gray-500 text-sm font-bold tracking-widest uppercase mb-10">Empreses que
+                    confien en nosaltres</p>
+                <div
+                    class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <div class="text-2xl font-black text-white/50 hover:text-white transition-colors cursor-default">
+                        MERCABARNA</div>
+                    <div class="text-2xl font-black text-white/50 hover:text-white transition-colors cursor-default">
+                        FRIGO CAT</div>
+                    <div class="text-2xl font-black text-white/50 hover:text-white transition-colors cursor-default">
+                        BIOFARMS</div>
+                    <div class="text-2xl font-black text-white/50 hover:text-white transition-colors cursor-default">
+                        CARNICA S.A.</div>
+                    <div class="text-2xl font-black text-white/50 hover:text-white transition-colors cursor-default">
+                        AGROMAR</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials"
+            class="py-40 border-t border-white/5 bg-gradient-to-b from-black/50 to-black relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20 section-fade">
-                    <h2 class="text-lime-500 font-bold tracking-widest uppercase mb-4 text-sm">Què en Diuen Els Nostres Clients</h2>
-                    <p class="text-5xl md:text-6xl font-extrabold mb-6">Testimonials</p>
+                <div class="text-center mb-24 section-fade">
+                    <h2 class="text-lime-500 font-bold tracking-widest uppercase mb-4 text-base">Què en Diuen Els
+                        Nostres
+                        Clients</h2>
+                    <p class="text-6xl md:text-7xl font-extrabold mb-6">Testimonials</p>
                     <p class="text-xl text-gray-400 max-w-2xl mx-auto">Confiem en la veu dels nostres clients</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 rounded-2xl p-8 border border-white/10 hover:border-lime-500/30 transition-all group section-fade card-hover">
+                    <div
+                        class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 rounded-2xl p-8 border border-white/10 hover:border-lime-500/30 transition-all group section-fade card-hover">
                         <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-lime-500 to-green-500 flex items-center justify-center text-white font-bold mr-4">JM</div>
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-lime-500 to-green-500 flex items-center justify-center text-white font-bold mr-4">
+                                JM</div>
                             <div>
                                 <p class="font-bold text-white">Joan Martínez</p>
                                 <p class="text-sm text-gray-400">CEO, Fruites Catalanes</p>
                             </div>
                         </div>
                         <div class="stars mb-4">★★★★★</div>
-                        <p class="text-gray-300 leading-relaxed">"FoodLogistic ha transformat la nostra cadena de subministrament. Els temps de lliurament es han reduït en un 35% mantenint la qualitat impecable."</p>
+                        <p class="text-gray-300 leading-relaxed">"FoodLogistic ha transformat la nostra cadena de
+                            subministrament. Els temps de lliurament es han reduït en un 35% mantenint la qualitat
+                            impecable."</p>
                     </div>
 
-                    <div class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 rounded-2xl p-8 border border-white/10 hover:border-lime-500/30 transition-all group section-fade card-hover">
+                    <div
+                        class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 rounded-2xl p-8 border border-white/10 hover:border-lime-500/30 transition-all group section-fade card-hover">
                         <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold mr-4">SP</div>
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold mr-4">
+                                SP</div>
                             <div>
                                 <p class="font-bold text-white">Sofia Pérez</p>
                                 <p class="text-sm text-gray-400">Directora, Lactis Premium</p>
                             </div>
                         </div>
                         <div class="stars mb-4">★★★★★</div>
-                        <p class="text-gray-300 leading-relaxed">"La tecnologia de monitoratge en temps real ens proporciona total transparència. Els nostres clients confien en cada lliurament."</p>
+                        <p class="text-gray-300 leading-relaxed">"La tecnologia de monitoratge en temps real ens
+                            proporciona total transparència. Els nostres clients confien en cada lliurament."</p>
                     </div>
 
-                    <div class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 rounded-2xl p-8 border border-white/10 hover:border-lime-500/30 transition-all group section-fade card-hover">
+                    <div
+                        class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 rounded-2xl p-8 border border-white/10 hover:border-lime-500/30 transition-all group section-fade card-hover">
                         <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold mr-4">RG</div>
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold mr-4">
+                                RG</div>
                             <div>
                                 <p class="font-bold text-white">Ramon García</p>
                                 <p class="text-sm text-gray-400">Director, Pescados Atlántic</p>
                             </div>
                         </div>
                         <div class="stars mb-4">★★★★★</div>
-                        <p class="text-gray-300 leading-relaxed">"El suport 24/7 i la proactivitat del seu equip és incomparable. Recomanem FoodLogistic sense dubtar-ho."</p>
+                        <p class="text-gray-300 leading-relaxed">"El suport 24/7 i la proactivitat del seu equip és
+                            incomparable. Recomanem FoodLogistic sense dubtar-ho."</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contacte" class="py-32 relative overflow-hidden">
+        <section id="faq"
+            class="py-40 border-t border-white/5 bg-gradient-to-b from-black to-black/50 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20 section-fade">
+                    <h2 class="text-lime-500 font-bold tracking-widest uppercase mb-4 text-base">Dubtes Freqüents</h2>
+                    <p class="text-5xl md:text-6xl font-extrabold mb-6">Preguntes i Respostes</p>
+                </div>
+
+                <div class="space-y-4 section-fade">
+                    <div class="bg-neutral-900/50 border border-white/10 rounded-2xl overflow-hidden faq-item transition-all duration-500 hover:shadow-[0_0_30px_rgba(132,204,22,0.15)] hover:border-lime-500/40 hover:bg-neutral-800/80">
+                        <button
+                            class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
+                            <span class="text-xl font-bold text-white">Quines temperatures podeu mantenir durant el
+                                transport?</span>
+                            <i class="fas fa-chevron-down text-lime-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-in-out">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-5 text-gray-400">
+                                    La nostra flota està equipada amb sistemes de refrigeració multitemperatura que ens permeten
+                                    mantenir rangs des de congelat (-25ºC) fins a refrigerat (entre +2ºC i +8ºC) i temperatura
+                                    controlada (+15ºC a +25ºC) en el mateix vehicle.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-neutral-900/50 border border-white/10 rounded-2xl overflow-hidden faq-item transition-all duration-500 hover:shadow-[0_0_30px_rgba(132,204,22,0.15)] hover:border-lime-500/40 hover:bg-neutral-800/80">
+                        <button
+                            class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
+                            <span class="text-xl font-bold text-white">Feu enviaments d'última milla al centre de
+                                Barcelona?</span>
+                            <i class="fas fa-chevron-down text-lime-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-in-out">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-5 text-gray-400">
+                                    Sí, disposem d'una flota de furgonetes elèctriques refrigerades amb etiqueta 0 emissions, la
+                                    qual cosa ens permet accedir a zones de baixes emissions (ZBE) i fer lliuraments al centre
+                                    de la ciutat a qualsevol hora sense restriccions mediambientals.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-neutral-900/50 border border-white/10 rounded-2xl overflow-hidden faq-item transition-all duration-500 hover:shadow-[0_0_30px_rgba(132,204,22,0.15)] hover:border-lime-500/40 hover:bg-neutral-800/80">
+                        <button
+                            class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
+                            <span class="text-xl font-bold text-white">Com puc fer el seguiment de la meva
+                                mercaderia?</span>
+                            <i class="fas fa-chevron-down text-lime-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-in-out">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-5 text-gray-400">
+                                    Tots els nostres clients tenen accés al portal web i app on poden fer el seguiment en temps
+                                    real (GPS) i veure l'estat de la temperatura de la mercaderia al llarg de tota la ruta
+                                    mitjançant sensors IoT.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacte" class="py-40 border-t border-white/5 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div class="section-fade">
@@ -459,14 +633,17 @@
                                 Contacta'ns Avui
                             </span>
                         </div>
-                        <h2 class="text-5xl font-bold mb-6 leading-tight">Parlem del teu <span class="gradient-text">següent projecte</span></h2>
+                        <h2 class="text-6xl md:text-7xl font-bold mb-6 leading-tight">Parlem del teu <span
+                                class="gradient-text">següent projecte</span></h2>
                         <p class="text-gray-400 text-lg mb-12 leading-relaxed">
-                            Tens alguna pregunta sobre les nostres tarifes o vols un pressupost personalitzat? Omple el formulari i el nostre equip expert es posarà en contacte amb tu en menys de 24 hores.
+                            Tens alguna pregunta sobre les nostres tarifes o vols un pressupost personalitzat? Omple el
+                            formulari i el nostre equip expert es posarà en contacte amb tu en menys de 24 hores.
                         </p>
 
                         <div class="space-y-6">
                             <div class="flex items-start space-x-4 group cursor-pointer">
-                                <div class="w-14 h-14 bg-lime-500/20 flex items-center justify-center rounded-2xl text-lime-400 group-hover:bg-lime-500/40 transition-all flex-shrink-0">
+                                <div
+                                    class="w-14 h-14 bg-lime-500/20 flex items-center justify-center rounded-2xl text-lime-400 group-hover:bg-lime-500/40 transition-all flex-shrink-0">
                                     <i class="fas fa-phone text-xl"></i>
                                 </div>
                                 <div>
@@ -475,7 +652,8 @@
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4 group cursor-pointer">
-                                <div class="w-14 h-14 bg-blue-500/20 flex items-center justify-center rounded-2xl text-blue-400 group-hover:bg-blue-500/40 transition-all flex-shrink-0">
+                                <div
+                                    class="w-14 h-14 bg-blue-500/20 flex items-center justify-center rounded-2xl text-blue-400 group-hover:bg-blue-500/40 transition-all flex-shrink-0">
                                     <i class="fas fa-envelope text-xl"></i>
                                 </div>
                                 <div>
@@ -484,48 +662,61 @@
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4 group cursor-pointer">
-                                <div class="w-14 h-14 bg-purple-500/20 flex items-center justify-center rounded-2xl text-purple-400 group-hover:bg-purple-500/40 transition-all flex-shrink-0">
+                                <div
+                                    class="w-14 h-14 bg-purple-500/20 flex items-center justify-center rounded-2xl text-purple-400 group-hover:bg-purple-500/40 transition-all flex-shrink-0">
                                     <i class="fas fa-map-marker-alt text-xl"></i>
                                 </div>
                                 <div>
                                     <p class="font-bold text-white">Ubicació</p>
-                                    <p class="text-gray-400">Carrer de la Teixidora, núm. 13, 08302 Mataró Barcelona.</p>
+                                    <p class="text-gray-400">Carrer de la Teixidora, núm. 13, 08302 Mataró Barcelona.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-10 rounded-3xl border border-white/10 section-fade card-hover">
+                    <div
+                        class="bg-neutral-800/80 p-10 rounded-3xl border border-lime-500/50 shadow-[0_0_30px_rgba(132,204,22,0.15)] section-fade pulse-glow relative z-10">
                         <form id="contactForm" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-semibold mb-3 text-white">Nom Complet</label>
-                                <input type="text" required placeholder="Joan Martínez" class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
+                                <input type="text" required placeholder="Joan Martínez"
+                                    class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold mb-3 text-white">Email corporatiu</label>
-                                <input type="email" required placeholder="joan@empresa.cat" class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
+                                <input type="email" required placeholder="joan@empresa.cat"
+                                    class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold mb-3 text-white">Telèfon</label>
-                                <input type="tel" required placeholder="+34 600 000 000" class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
+                                <input type="tel" required placeholder="+34 600 000 000"
+                                    class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold mb-3 text-white">Empresa</label>
-                                <input type="text" required placeholder="La teva empresa" class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
+                                <input type="text" required placeholder="La teva empresa"
+                                    class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold mb-3 text-white">Missatge</label>
-                                <textarea rows="4" required placeholder="Descriu el teu projecte..." class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500 resize-none"></textarea>
+                                <textarea rows="4" required placeholder="Descriu el teu projecte..."
+                                    class="w-full bg-black/50 border border-white/10 rounded-2xl px-5 py-4 focus:border-lime-500 focus:ring-2 focus:ring-lime-500/30 outline-none transition-all text-white placeholder-gray-500 resize-none"></textarea>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <input type="checkbox" required id="data-consent" class="mt-1">
-                                <label for="data-consent" class="text-sm text-gray-300">He llegit i accepto la <a href="politica-privacitat.html" class="text-lime-500 hover:underline">Política de Privacitat</a> i el tractament de les meves dades personals.</label>
+                                <label for="data-consent" class="text-sm text-gray-300">He llegit i accepto la <a
+                                        href="politica-privacitat.html" class="text-lime-500 hover:underline">Política
+                                        de Privacitat</a> i el tractament de les meves dades personals.</label>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <input type="checkbox" id="commercial-consent" class="mt-1">
-                                <label for="commercial-consent" class="text-sm text-gray-300">Accepto rebre comunicacions comercials segons l'<a href="avis-legal.html" class="text-lime-500 hover:underline">Avís Legal</a>.</label>
+                                <label for="commercial-consent" class="text-sm text-gray-300">Accepto rebre
+                                    comunicacions comercials segons l'<a href="avis-legal.html"
+                                        class="text-lime-500 hover:underline">Avís Legal</a>.</label>
                             </div>
-                            <button type="submit" class="w-full btn-primary text-black font-bold py-4 rounded-2xl transition-all transform hover:scale-105 relative z-10">
+                            <button type="submit"
+                                class="w-full btn-primary text-black font-bold py-4 rounded-2xl transition-all transform hover:scale-105 relative z-10">
                                 <span class="relative z-10">Enviar Solicitud</span>
                             </button>
                         </form>
@@ -546,7 +737,8 @@
                         </div>
                         <span class="text-lg font-bold">FoodLogistic</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Solucions logístiques intel·ligents per al sector alimentari.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Solucions logístiques intel·ligents per al sector
+                        alimentari.</p>
                 </div>
 
                 <div>
@@ -554,7 +746,8 @@
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#inici" class="hover:text-lime-400 transition-colors">Inici</a></li>
                         <li><a href="#serveis" class="hover:text-lime-400 transition-colors">Serveis</a></li>
-                        <li><a href="#estadistiques" class="hover:text-lime-400 transition-colors">Estadístiques</a></li>
+                        <li><a href="#estadistiques" class="hover:text-lime-400 transition-colors">Estadístiques</a>
+                        </li>
                         <li><a href="#contacte" class="hover:text-lime-400 transition-colors">Contacte</a></li>
                     </ul>
                 </div>
@@ -571,25 +764,30 @@
                 <div>
                     <h4 class="font-bold text-white mb-4">Segueix-nos</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-lime-500 text-white transition-colors">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-lime-500 text-white transition-colors">
                             <i class="fab fa-linkedin text-sm"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-lime-500 text-white transition-colors">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-lime-500 text-white transition-colors">
                             <i class="fab fa-twitter text-sm"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-lime-500 text-white transition-colors">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-lime-500 text-white transition-colors">
                             <i class="fab fa-instagram text-sm"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
                 <div>
                     <p>&copy; 2024 FoodLogistic. Tots els drets reservats.</p>
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="politica-privacitat.html" class="hover:text-lime-500 transition-colors">Política de Privacitat</a>
+                    <a href="politica-privacitat.html" class="hover:text-lime-500 transition-colors">Política de
+                        Privacitat</a>
                     <a href="avis-legal.html" class="hover:text-lime-500 transition-colors">Avís Legal</a>
                     <a href="politica-cookies.html" class="hover:text-lime-500 transition-colors">Cookies</a>
                 </div>
@@ -597,16 +795,27 @@
         </div>
     </footer>
 
-    <div id="toast" class="fixed bottom-10 right-10 bg-lime-500 text-black px-6 py-4 rounded-2xl font-bold transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-[100]">
+    <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-6 right-6 z-[90] w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 hover:shadow-[0_0_30px_rgba(37,211,102,0.8)] transition-all duration-300">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="toast"
+        class="fixed bottom-24 right-6 bg-lime-500 text-black px-6 py-4 rounded-2xl font-bold transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-[100]">
         Missatge enviat amb èxit!
     </div>
 
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl p-4 border-t border-white/10 z-50">
+    <div id="cookie-banner"
+        class="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl p-4 border-t border-white/10 z-50">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between">
-            <p class="text-gray-300 text-sm mb-4 md:mb-0">Aquest lloc web utilitza cookies per millorar la teva experiència. Consulta la nostra <a href="politica-cookies.html" class="text-lime-500 hover:underline">Política de Cookies</a>.</p>
+            <p class="text-gray-300 text-sm mb-4 md:mb-0">Aquest lloc web utilitza cookies per millorar la teva
+                experiència. Consulta la nostra <a href="politica-cookies.html"
+                    class="text-lime-500 hover:underline">Política de Cookies</a>.</p>
             <div class="flex space-x-4">
-                <button id="accept-cookies" class="bg-lime-500 text-black px-4 py-2 rounded-full font-bold hover:bg-lime-400 transition-colors">Acceptar</button>
-                <button id="reject-cookies" class="border border-gray-500 text-gray-300 px-4 py-2 rounded-full hover:bg-gray-700 transition-colors">Rebutjar</button>
+                <button id="accept-cookies"
+                    class="bg-lime-500 text-black px-4 py-2 rounded-full font-bold hover:bg-lime-400 transition-colors">Acceptar</button>
+                <button id="reject-cookies"
+                    class="border border-gray-500 text-gray-300 px-4 py-2 rounded-full hover:bg-gray-700 transition-colors">Rebutjar</button>
             </div>
         </div>
     </div>
@@ -685,16 +894,20 @@
             });
 
             // 4. Header dinámico con cambio de scroll
-            const header = document.querySelector('header');
+            const header = document.getElementById('main-header');
             let lastScrollY = 0;
 
             window.addEventListener('scroll', () => {
                 const currentScrollY = window.scrollY;
 
-                if (currentScrollY > 100) {
-                    header.classList.add('bg-black/80', 'shadow-2xl');
+                if (currentScrollY > 40) {
+                    header.classList.remove('top-10');
+                    header.classList.add('top-0');
+                    header.classList.add('bg-black', 'shadow-2xl');
                 } else {
-                    header.classList.remove('bg-black/80', 'shadow-2xl');
+                    header.classList.add('top-10');
+                    header.classList.remove('top-0');
+                    header.classList.remove('bg-black', 'shadow-2xl');
                 }
 
                 // Hide/show header
@@ -720,21 +933,43 @@
                 });
             });
 
-            // 6. Efecto parallax suave
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        const scrollY = window.scrollY;
-                        const heroImg = document.querySelector('#inici img');
-                        if (heroImg) {
-                            heroImg.style.transform = `translateY(${scrollY * 0.5}px)`;
+            // 6. Efecto parallax interactiu amb el ratolí
+            document.addEventListener('mousemove', (e) => {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+
+                document.querySelectorAll('.parallax-element').forEach(el => {
+                    const speed = el.getAttribute('data-speed') || 20;
+                    const xOffset = (window.innerWidth / 2 - e.pageX) / speed;
+                    const yOffset = (window.innerHeight / 2 - e.pageY) / speed;
+                    el.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+                });
+            });
+
+            // 6.5. FAQ Accordion
+            const faqBtns = document.querySelectorAll('.faq-btn');
+            faqBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('i');
+
+                    // Close all others
+                    document.querySelectorAll('.faq-content').forEach(c => {
+                        if (c !== content && c.classList.contains('grid-rows-[1fr]')) {
+                            c.classList.remove('grid-rows-[1fr]', 'opacity-100');
+                            c.classList.add('grid-rows-[0fr]', 'opacity-0');
+                            c.previousElementSibling.querySelector('i').classList.remove('rotate-180');
                         }
-                        ticking = false;
                     });
-                    ticking = true;
-                }
-            }, { passive: true });
+
+                    // Toggle current
+                    content.classList.toggle('grid-rows-[0fr]');
+                    content.classList.toggle('grid-rows-[1fr]');
+                    content.classList.toggle('opacity-0');
+                    content.classList.toggle('opacity-100');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
 
             // 7. Contador animado para estadísticas
             const observerStats = new IntersectionObserver((entries) => {
@@ -772,10 +1007,10 @@
 
             // 8. Input focus effects
             document.querySelectorAll('input, textarea').forEach(input => {
-                input.addEventListener('focus', function() {
+                input.addEventListener('focus', function () {
                     this.parentElement.classList.add('ring-2', 'ring-lime-500/50');
                 });
-                input.addEventListener('blur', function() {
+                input.addEventListener('blur', function () {
                     this.parentElement.classList.remove('ring-2', 'ring-lime-500/50');
                 });
             });
@@ -794,20 +1029,18 @@
         });
     </script>
 
-<script type="text/javascript">
-var sc_project=13221920; 
-var sc_invisible=1; 
-var sc_security="078a171a"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="site stats"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="https://c.statcounter.com/13221920/0/078a171a/1/"
-alt="site stats"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <script type="text/javascript">
+        var sc_project = 13221920;
+        var sc_invisible = 1;
+        var sc_security = "078a171a"; 
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter"><a title="site stats" href="https://statcounter.com/" target="_blank"><img
+                    class="statcounter" src="https://c.statcounter.com/13221920/0/078a171a/1/" alt="site stats"
+                    referrerPolicy="no-referrer-when-downgrade"></a></div>
+    </noscript>
 
 </body>
+
 </html>
